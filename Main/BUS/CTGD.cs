@@ -40,5 +40,39 @@ namespace BUS
             cmd.Dispose();
             con.Close();
         }
+        public void SuaCTGD(string tenlop, string tenmon, string tengv, string ngayday, int tiet)
+        {
+            string sql = "SuaCTGD";
+            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@tenlop", tenlop);
+            cmd.Parameters.AddWithValue("@tenmon", tenmon);
+            cmd.Parameters.AddWithValue("@tengv", tengv);
+            cmd.Parameters.AddWithValue("@ngayday", ngayday);
+            cmd.Parameters.AddWithValue("@tiet", tiet);
+
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+        }
+
+        //Xoa
+        public void XoaCTGD(string tenlop, string ngayday, string tiet)
+        {
+            string sql = "Xoa_CTDG";
+            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@tenlop", tenlop);
+            cmd.Parameters.AddWithValue("@ngayday", ngayday);
+            cmd.Parameters.AddWithValue("@tiet", tiet);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+        }
     }
 }
