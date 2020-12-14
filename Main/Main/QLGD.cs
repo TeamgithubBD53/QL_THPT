@@ -58,6 +58,35 @@ namespace Main
             dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtTiet.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
+
+        private void BtnThem_Click(object sender, EventArgs e)
+        {
+            SetNull();
+            selection = 1;
+            cboTenLop.Enabled = cboTenGV.Enabled = cboTenMon.Enabled = dateTimePicker1.Enabled = txtTiet.Enabled = true;
+        }
+
+        private void BtnSua_Click(object sender, EventArgs e)
+        {
+            cboTenMon.Enabled = cboTenGV.Enabled = true;
+            cboTenLop.Enabled = false;
+            txtTiet.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            selection = 2;
+        }
+
+        private void BtnXoa_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cboTenMon.SelectedValue.ToString());
+            ct.XoaCTGD(cboTenLop.Text, dateTimePicker1.Text, txtTiet.Text);
+            dataGridView1.DataSource = ct.Show(cboTenMon.Text);
+            MessageBox.Show("Xóa dữ liệu thành công");
+        }
+
+        private void BtnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }
