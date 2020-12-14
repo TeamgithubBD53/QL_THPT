@@ -51,7 +51,7 @@
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "gtDangNhap";
             treeNode1.Text = "Đăng nhập";
@@ -78,7 +78,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Location = new System.Drawing.Point(228, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(729, 341);
             this.pictureBox1.TabIndex = 2;
@@ -88,7 +88,7 @@
             // 
             this.txtGioiThieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtGioiThieu.Location = new System.Drawing.Point(228, 341);
-            this.txtGioiThieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGioiThieu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGioiThieu.Multiline = true;
             this.txtGioiThieu.Name = "txtGioiThieu";
             this.txtGioiThieu.Size = new System.Drawing.Size(729, 181);
@@ -102,10 +102,11 @@
             this.Controls.Add(this.txtGioiThieu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.treeView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHuongDan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHuongDan";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHuongDan_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
