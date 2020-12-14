@@ -39,5 +39,40 @@ namespace Main
             txtMaGV.Text = txtHoTenGV.Text = txtDiaChi.Text = txtLuong.Text = cbGTGV.Text = cbMonHoc.Text = cbTKGV.Text = txtTKGV.Text = txtSDT.Text = "";
             dtpNgaySinhGV.Text = DateTime.Now.ToShortDateString();
         }
+
+        private void dgvGiaoVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtMaGV.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtHoTenGV.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cbGTGV.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+                dtpNgaySinhGV.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDiaChi.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtSDT.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtLuong.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cbMonHoc.Text = dgvGiaoVien.Rows[e.RowIndex].Cells[7].Value.ToString();
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            Mo();
+            SetNull();
+            chon = 2;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Mo();
+            SetNull();
+            txtTKGV.Enabled = cbTKGV.Enabled = true;
+            chon = 1;
+        }
     }
 }

@@ -92,5 +92,14 @@ namespace BUS
             con.Close();
         }
         #endregion
+        public DataTable LayThongTinMonHoc()
+        {
+            string sql = "SELECT * FROM tblMonHoc";
+            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
