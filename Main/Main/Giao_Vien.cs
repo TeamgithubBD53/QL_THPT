@@ -39,7 +39,6 @@ namespace Main
             txtMaGV.Text = txtHoTenGV.Text = txtDiaChi.Text = txtLuong.Text = cbGTGV.Text = cbMonHoc.Text = cbTKGV.Text = txtTKGV.Text = txtSDT.Text = "";
             dtpNgaySinhGV.Text = DateTime.Now.ToShortDateString();
         }
-
         private void dgvGiaoVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -73,6 +72,69 @@ namespace Main
             SetNull();
             txtTKGV.Enabled = cbTKGV.Enabled = true;
             chon = 1;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Bạn muốn xóa Giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                gv.Xoa_GV(txtMaGV.Text);
+                MessageBox.Show("Xóa thành công!");
+                Giao_Vien_Load(sender, e);
+                SetNull();
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (chon == 1)
+            {
+                if (txtHoTenGV.Text == "" || cbGTGV.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || cbMonHoc.Text == "" || dtpNgaySinhGV.Text == "" || txtLuong.Text == "")
+                    MessageBox.Show("Mời nhập đầy đủ thông tin!");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        gv.Sua_GV(txtMaGV.Text, txtHoTenGV.Text, cbGTGV.Text, (dtpNgaySinhGV.Text), txtDiaChi.Text, txtSDT.Text, txtLuong.Text, cbMonHoc.SelectedValue.ToString());
+                        MessageBox.Show("Sửa thành công!");
+                        SetNull();
+                        Giao_Vien_Load(sender, e);
+                    }
+                }
+            }
+            else if (chon == 2)
+            {
+                if (txtHoTenGV.Text == "" || cbGTGV.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || cbMonHoc.Text == "" || dtpNgaySinhGV.Text == "" || txtLuong.Text == "")
+                    MessageBox.Show("Mời nhập đầy đủ thông tin!");
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("Bạn có muốn thêm giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                    {
+                        gv.ADDGiaoVien(txtHoTenGV.Text, cbGTGV.Text, dtpNgaySinhGV.Text, txtDiaChi.Text, txtSDT.Text, txtLuong.Text, cbMonHoc.SelectedValue.ToString());
+                        MessageBox.Show("Thêm thành công!");
+                        SetNull();
+                        Giao_Vien_Load(sender, e);
+                    }
+                }
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Giao_Vien_Load(sender, e);
+            SetNull();
+        }
+
+        private void Giao_Vien_Load(object sender, EventArgs e)
+        {
+                KhoiTao();
+                dgvGiaoVien.DataSource = gv.Show();
+
+                cbMonHoc.DataSource = gv.LayThongTinMonHoc();
+                cbMonHoc.DisplayMember = "TenMon";
+                cbMonHoc.ValueMember = "MaMon";
+                cbMonHoc.SelectedValue = "MaMon";
+            chon = 0;
         }
     }
 }
