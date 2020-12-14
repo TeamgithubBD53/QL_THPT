@@ -67,7 +67,7 @@ namespace BUS
             cmd.Parameters.AddWithValue("@MaGV", MaGV);
             cmd.Parameters.AddWithValue("@HoTen", HoTen);
             cmd.Parameters.AddWithValue("@GT", GT);
-            cmd.Parameters.AddWithValue("@NgaySinh", DateTime.Parse(NgaySinh));
+            cmd.Parameters.AddWithValue("@NgaySinh", NgaySinh);
             cmd.Parameters.AddWithValue("@DiaChi", DiaChi);
             cmd.Parameters.AddWithValue("@SDT", int.Parse(SDT));
             cmd.Parameters.AddWithValue("@Luong", int.Parse(Luong));

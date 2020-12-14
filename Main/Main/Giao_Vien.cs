@@ -69,17 +69,17 @@ namespace Main
         private void btnSua_Click(object sender, EventArgs e)
         {
             Mo();
-            SetNull();
+          //  SetNull();
             txtTKGV.Enabled = cbTKGV.Enabled = true;
             chon = 1;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Bạn muốn xóa Giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (DialogResult.Yes == MessageBox.Show("Bạn muốn xóa Giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 gv.Xoa_GV(txtMaGV.Text);
-                MessageBox.Show("Xóa thành công!");
+                MessageBox.Show("Xóa thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Giao_Vien_Load(sender, e);
                 SetNull();
             }
@@ -96,7 +96,7 @@ namespace Main
                     if (DialogResult.Yes == MessageBox.Show("Bạn có muốn sửa giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
                         gv.Sua_GV(txtMaGV.Text, txtHoTenGV.Text, cbGTGV.Text, (dtpNgaySinhGV.Text), txtDiaChi.Text, txtSDT.Text, txtLuong.Text, cbMonHoc.SelectedValue.ToString());
-                        MessageBox.Show("Sửa thành công!");
+                        MessageBox.Show("Sửa thành công!", "THÔNG BÁO",MessageBoxButtons.OK, MessageBoxIcon.Information);
                         SetNull();
                         Giao_Vien_Load(sender, e);
                     }
@@ -111,7 +111,7 @@ namespace Main
                     if (DialogResult.Yes == MessageBox.Show("Bạn có muốn thêm giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
                         gv.ADDGiaoVien(txtHoTenGV.Text, cbGTGV.Text, dtpNgaySinhGV.Text, txtDiaChi.Text, txtSDT.Text, txtLuong.Text, cbMonHoc.SelectedValue.ToString());
-                        MessageBox.Show("Thêm thành công!");
+                        MessageBox.Show("Thêm thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         SetNull();
                         Giao_Vien_Load(sender, e);
                     }
