@@ -76,7 +76,7 @@ namespace Main
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Bạn muốn xóa Giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+            if (DialogResult.Yes == MessageBox.Show("Bạn muốn xóa giáo viên này?", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
                 gv.Xoa_GV(txtMaGV.Text);
                 MessageBox.Show("Xóa thành công!", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
