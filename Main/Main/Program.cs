@@ -12,7 +12,7 @@ namespace Main
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hoc_Sinh());
+            Application.Run(new Giao_Vien());
         }
     }
 }
