@@ -87,6 +87,30 @@ namespace Main
         {
             this.Close();
         }
+
+        private void BtnLuu_Click(object sender, EventArgs e)
+        {
+            if (selection == 1)
+            {
+                ct.ThemCTGD(cboTenLop.Text, cboTenGV.Text, cboTenMon.Text, dateTimePicker1.Value.ToString(), Convert.ToInt32(txtTiet.Text));
+                MessageBox.Show("Thêm dữ liệu thành công");
+            }
+            else if (selection == 2)
+            {
+                ct.SuaCTGD(cboTenLop.Text, cboTenMon.Text,
+                                cboTenGV.Text, dateTimePicker1.Text, Convert.ToInt32(txtTiet.Text));
+                MessageBox.Show("Sửa dữ liệu thành công");
+            }
+        }
+
+        private void BtnTim_Click(object sender, EventArgs e)
+        {
+            if (cboTenLop.Text != "")
+            {
+                dataGridView1.DataSource = ct.Show(cboTenLop.Text);
+            }
+            cboTenMon.Enabled = cboTenGV.Enabled = txtTiet.Enabled = dateTimePicker1.Enabled = false;
+        }
     }
 
 }
