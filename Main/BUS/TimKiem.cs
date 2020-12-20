@@ -70,5 +70,20 @@ namespace BUS
             da.Fill(dt);
             return dt;
         }
+        // tim kiem lop theo ma
+        public DataTable TK_Ma_Lop(string MaLop)
+        {
+            string sql = "SELECT *SELECT * FROM tblLop WHERE MaLop like N'%' + @MaLop + '%'";
+            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter();
+            cmd.Parameters.AddWithValue("@MaLop", MaLop);
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
