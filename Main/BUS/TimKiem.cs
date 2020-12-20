@@ -40,5 +40,35 @@ namespace BUS
             da.Fill(dt);
             return dt;
         }
+        // Tìm kiếm Hoc Sinh theo tên
+        public DataTable TKTenHocSinh(string HoTen)
+        {
+            string sql = "TK_HS_HoTen";
+            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter();
+            cmd.Parameters.AddWithValue("@HoTen", HoTen);
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
+        // Tìm kiếm Hoc Sinh theo Ma
+        public DataTable TK_Ma_HocSinh(string Ma)
+        {
+            string sql = "SELECT * FROM tblHocSinh WHERE MaHS like N'%' + @MaHS + '%'";
+            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter();
+            cmd.Parameters.AddWithValue("@MaHS", Ma);
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
