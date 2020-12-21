@@ -30,12 +30,12 @@ namespace Main
 
         private void QLGD_Load(object sender, EventArgs e)
         {
-            
+            cboTenLop.DataSource = l.Show();
             cboTenLop.DisplayMember = "TenLop";
             cboTenLop.ValueMember = "MaLop";
             cboTenLop.SelectedValue = "MaLop";
             cboTenLop.SelectedIndex = 0;
-          
+            cboTenMon.DataSource = mh.Show();
             cboTenMon.DisplayMember = "TenMon";
             cboTenMon.ValueMember = "MaMon";
             cboTenMon.SelectedValue = "MaMon";
@@ -110,6 +110,18 @@ namespace Main
                 dataGridView1.DataSource = ct.Show(cboTenLop.Text);
             }
             cboTenMon.Enabled = cboTenGV.Enabled = txtTiet.Enabled = dateTimePicker1.Enabled = false;
+        }
+
+        private void CboTenMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboTenGV.DataSource = gv.Show(cboTenMon.Text);
+            cboTenGV.DisplayMember = "HoTen";
+            cboTenGV.ValueMember = "MaGV";
+            cboTenGV.SelectedValue = "MaGV";
+            if (cboTenGV.Items.Count > 0)
+            {
+                cboTenGV.SelectedIndex = 0;
+            }
         }
     }
 

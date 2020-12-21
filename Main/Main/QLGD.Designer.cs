@@ -209,6 +209,7 @@
             this.cboTenMon.Name = "cboTenMon";
             this.cboTenMon.Size = new System.Drawing.Size(243, 24);
             this.cboTenMon.TabIndex = 4;
+            this.cboTenMon.SelectedIndexChanged += new System.EventHandler(this.CboTenMon_SelectedIndexChanged);
             // 
             // label2
             // 
