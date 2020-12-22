@@ -372,6 +372,7 @@
             this.dgvHocSinh.Location = new System.Drawing.Point(4, 19);
             this.dgvHocSinh.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHocSinh.Name = "dgvHocSinh";
+            this.dgvHocSinh.ReadOnly = true;
             this.dgvHocSinh.RowHeadersWidth = 51;
             this.dgvHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHocSinh.Size = new System.Drawing.Size(1303, 253);
@@ -385,6 +386,7 @@
             this.Column1.HeaderText = "Mã HS";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
@@ -393,6 +395,7 @@
             this.Column2.HeaderText = "Họ Tên";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
@@ -401,6 +404,7 @@
             this.Column3.HeaderText = "GT";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -409,6 +413,7 @@
             this.Column4.HeaderText = "Ngày Sinh";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
@@ -417,6 +422,7 @@
             this.Column5.HeaderText = "Địa Chỉ";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
@@ -425,6 +431,7 @@
             this.Column6.HeaderText = "Phụ Huynh";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
@@ -433,6 +440,7 @@
             this.Column7.HeaderText = "Mã Lớp";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Hoc_Sinh
             // 
