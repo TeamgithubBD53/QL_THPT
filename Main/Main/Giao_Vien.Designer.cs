@@ -149,6 +149,7 @@
             this.txtTKGV.Name = "txtTKGV";
             this.txtTKGV.Size = new System.Drawing.Size(235, 22);
             this.txtTKGV.TabIndex = 40;
+            this.txtTKGV.TextChanged += new System.EventHandler(this.txtTKGV_TextChanged);
             // 
             // cbTKGV
             // 
