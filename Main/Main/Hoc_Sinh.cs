@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 
 namespace Main
@@ -19,6 +20,7 @@ namespace Main
             InitializeComponent();
         }
         HocSinh hs = new HocSinh();
+        TimKiem tk = new TimKiem();
         int chon;
         //TimKiem tk = new TimKiem();
         public void KhoiTao()
@@ -134,6 +136,14 @@ namespace Main
             Mo();
             SetNull();
             chon = 2;
+        }
+
+        private void txtTK_HS_TextChanged_1(object sender, EventArgs e)
+        {
+            if (cbTK_HS.Text == "Mã")
+                dgvHocSinh.DataSource = tk.TK_Ma_HocSinh(txtTK_HS.Text);
+            else
+                dgvHocSinh.DataSource = tk.TKTenHocSinh(txtTK_HS.Text);
         }
     }
 }

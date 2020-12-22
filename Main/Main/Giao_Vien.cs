@@ -136,5 +136,14 @@ namespace Main
                 cbMonHoc.SelectedValue = "MaMon";
             chon = 0;
         }
+
+         private void txtTKGV_TextChanged(object sender, EventArgs e)
+        {
+
+            if (cbTKGV.Text == "Mã")
+                dgvGiaoVien.DataSource = tk.TK_Ma_GiaoVien(txtTKGV.Text);
+            else
+                dgvGiaoVien.DataSource = tk.TKTenGiaoVien(txtTKGV.Text);
+        }
     }
 }
