@@ -330,6 +330,7 @@
             this.txtTK_HS.Name = "txtTK_HS";
             this.txtTK_HS.Size = new System.Drawing.Size(316, 22);
             this.txtTK_HS.TabIndex = 64;
+            this.txtTK_HS.TextChanged += new System.EventHandler(this.txtTK_HS_TextChanged_1);
             // 
             // cbTK_HS
             // 
