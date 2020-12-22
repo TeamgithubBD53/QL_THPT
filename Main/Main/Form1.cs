@@ -15,6 +15,38 @@ namespace Main
         public Form1()
         {
             InitializeComponent();
+            label1.BackColor = Color.Transparent;
+        }
+
+        private void giáoViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Giao_Vien gv = new Giao_Vien();
+            gv.Show();
+        }
+
+        private void họcSinhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hoc_Sinh hs = new Hoc_Sinh();
+            hs.Show();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Muốn Thoát Ứng dụng này?", "Question", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void thôngTinGiảngDạyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLGD frm = new QLGD();
+            frm.Show();
+        }
+
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHuongDan hd = new frmHuongDan();
+            hd.Show();
+            Hide();
         }
     }
 }
