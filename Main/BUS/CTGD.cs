@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace BUS
 {
@@ -26,37 +27,53 @@ namespace BUS
         }
         public void ThemCTGD(string tenlop, string tengv, string tenmon, string ngayday, int tiet)
         {
-            string sql = "ThemCTGD";
-            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@tenlop", tenlop);
-            cmd.Parameters.AddWithValue("@tengv", tengv);
-            cmd.Parameters.AddWithValue("@tenmon", tenmon);
-            cmd.Parameters.AddWithValue("@ngayday", ngayday);
-            cmd.Parameters.AddWithValue("@tiet", tiet);
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
+            try
+            {
+                string sql = "ThemCTGD";
+                SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@tenlop", tenlop);
+                cmd.Parameters.AddWithValue("@tengv", tengv);
+                cmd.Parameters.AddWithValue("@tenmon", tenmon);
+                cmd.Parameters.AddWithValue("@ngayday", ngayday);
+                cmd.Parameters.AddWithValue("@tiet", tiet);
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
         public void SuaCTGD(string tenlop, string tenmon, string tengv, string ngayday, int tiet)
         {
-            string sql = "SuaCTGD";
-            SqlConnection con = new SqlConnection(ConnectDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                string sql = "SuaCTGD";
+                SqlConnection con = new SqlConnection(ConnectDB.getconnect());
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@tenlop", tenlop);
-            cmd.Parameters.AddWithValue("@tenmon", tenmon);
-            cmd.Parameters.AddWithValue("@tengv", tengv);
-            cmd.Parameters.AddWithValue("@ngayday", ngayday);
-            cmd.Parameters.AddWithValue("@tiet", tiet);
+                cmd.Parameters.AddWithValue("@tenlop", tenlop);
+                cmd.Parameters.AddWithValue("@tenmon", tenmon);
+                cmd.Parameters.AddWithValue("@tengv", tengv);
+                cmd.Parameters.AddWithValue("@ngayday", ngayday);
+                cmd.Parameters.AddWithValue("@tiet", tiet);
 
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
 
         //Xoa
