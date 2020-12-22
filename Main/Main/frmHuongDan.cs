@@ -19,48 +19,50 @@ namespace Main
 
         private void GetFileAll(string tenfile)
         {
-            StreamReader doc = File.OpenText(tenfile);
+            StreamReader doc = File.OpenText("../../../Resource/"+ tenfile);
             string s = doc.ReadToEnd();
             txtGioiThieu.Text = s;
         }
+
+
+        private void GetImgAll(string tenimg)
+        {
+            Image img = Image.FromFile("../../../Resource/"+ @tenimg);
+            pictureBox1.BackgroundImage = img;
+        }
+
 
         private void trViewGioiThieu_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (e.Node.Name == "gtPhanMem")
             {
                 GetFileAll("GioiThieuChung.txt");
-                Image img = Image.FromFile(@"truong.jpg");
-                pictureBox1.BackgroundImage = img;
+                GetImgAll(@"1_Ngaykhaigiang.jpg");
             }
             else if (e.Node.Name == "gtDangNhap")
             {
                 GetFileAll("PhanDangNhap.txt");
-                Image img = Image.FromFile(@"b2 dang nhap.png");
-                pictureBox1.BackgroundImage = img;
+                GetImgAll(@"b2 dang nhap.png");
             }
             else if (e.Node.Name == "gtManHinhChinh")
             {
                 GetFileAll("PhanMain.txt");
-                Image img = Image.FromFile(@"b2 main.png");
-                pictureBox1.BackgroundImage = img;
+                GetImgAll(@"b2 main.png");
             }
             else if (e.Node.Name == "gtGiaoVien")
             {
                 GetFileAll("PhanQuanLyGiaoVien.txt");
-                Image img = Image.FromFile(@"b2 giao vien.png");
-                pictureBox1.BackgroundImage = img;
+                GetImgAll(@"b2 giao vien.png");
             }
             else  if (e.Node.Name == "gtHocSinh")
             {
                 GetFileAll("PhanQuanLyHocSinh.txt");
-                Image img = Image.FromFile(@"b2 hoc sinh.png");
-                pictureBox1.BackgroundImage = img;
+                GetImgAll(@"b2 hoc sinh.png");
             }
             else if (e.Node.Name == "gtQLGD")
             {
                 GetFileAll("PhanQuanLyQLGD.txt");
-                Image img = Image.FromFile(@"b2 ttgd.png");
-                pictureBox1.BackgroundImage = img;
+                GetImgAll(@"b2 ttgd.png");
             }
         }
 
